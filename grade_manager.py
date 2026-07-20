@@ -52,3 +52,12 @@ while choice.lower() == "yes":
     choice = input("Type 'no' to exit: ")
 
 print("Program ended.")
+
+# *args example
+def calculate_total(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
+
+print("Total:", calculate_total(10, 20, 30))
