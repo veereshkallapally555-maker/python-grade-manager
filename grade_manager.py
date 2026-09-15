@@ -24,6 +24,9 @@ while True:
 
 total_marks = 0.0
 passed_students = 0
+failed_students = 0
+highest_marks = 0.0
+lowest_marks = 100.0
 
 for i in range(num_students):
     print(f"\nStudent {i + 1}")
@@ -52,6 +55,12 @@ for i in range(num_students):
 
     total_marks += marks
 
+    if marks > highest_marks:
+        highest_marks = marks
+
+    if marks < lowest_marks:
+        lowest_marks = marks
+
     if marks >= 90:
         grade = "A"
     elif marks >= 75:
@@ -67,6 +76,8 @@ for i in range(num_students):
 
     if passed:
         passed_students += 1
+    else:
+        failed_students += 1
 
     print(f"{name} scored {marks} and got grade {grade}")
     print(f"Passed: {passed}")
@@ -77,7 +88,10 @@ average = total_marks / num_students
 print("\n===== SUMMARY =====")
 print(f"Total Students : {num_students}")
 print(f"Passed Students: {passed_students}")
+print(f"Failed Students: {failed_students}")
 print(f"Average Marks  : {average:.2f}")
+print(f"Highest Marks  : {highest_marks:.2f}")
+print(f"Lowest Marks   : {lowest_marks:.2f}")
 
 
 choice = "yes"
